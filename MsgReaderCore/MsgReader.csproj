@@ -4,8 +4,8 @@
     <TargetFrameworks>net45;netstandard2.0</TargetFrameworks>
     <RootNamespace>MsgReader</RootNamespace>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <Version>3.11.0</Version>
-    <AssemblyVersion>3.11.0.0</AssemblyVersion>
+    <Version>3.12.2</Version>
+    <AssemblyVersion>3.12.2.0</AssemblyVersion>
     <Authors>Kees van Spelde</Authors>
     <Company>Magic-Sessions</Company>
     <Copyright>(c)2013-2021 - Kees van Spelde</Copyright>
@@ -20,14 +20,10 @@
 The MSGReader supports MSG E-Mail (also signed), Contact, Appointment, Task, Sticky notes and Contact files.
 
 The EML reader supports MIME 1.0 encoded files</Description>
-    <PackageReleaseNotes>- Added e-mail RAW property
-- Use recyclable memory manager (for high performance systems) instead memorystream
-- Update e-mail validating regex
-- Update copyright information
-- Added latest RTFPipe nuget package</PackageReleaseNotes>
+    <PackageReleaseNotes>- Fix for reading namedproperties</PackageReleaseNotes>
     <SignAssembly>true</SignAssembly>
     <AssemblyOriginatorKeyFile>MSGReader.snk</AssemblyOriginatorKeyFile>
-    <FileVersion>3.11.0.0</FileVersion>
+    <FileVersion>3.12.2.0</FileVersion>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageIcon>Outlook-icon.png</PackageIcon>
   </PropertyGroup>
@@ -59,6 +55,7 @@ The EML reader supports MIME 1.0 encoded files</Description>
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.IO.RecyclableMemoryStream" Version="1.4.0" />
     <PackageReference Include="OpenMcdf" Version="2.2.1.9" />
     <PackageReference Include="RtfPipe" Version="2.0.7677.4303" />
   </ItemGroup>
@@ -68,10 +65,6 @@ The EML reader supports MIME 1.0 encoded files</Description>
       <Pack>True</Pack>
       <PackagePath></PackagePath>
     </None>
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Helpers\RecycableMemoryStream\" />
   </ItemGroup>
 
 </Project>

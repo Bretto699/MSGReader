@@ -25,7 +25,7 @@
 //
 
 using System.IO;
-using Microsoft.IO;
+using RecyclableMemoryStreamManager = Microsoft.IO.RecyclableMemoryStreamManager;
 
 namespace MsgReader.Helpers
 {
